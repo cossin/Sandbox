@@ -1,13 +1,13 @@
-const app = require('express')();
-const http = require('http').Server(app);
-const io = require('socket.io')(http);
+var app = require('express')();
+var http = require('http').Server(app);
+var io = require('socket.io')(http);
 
-const documents = {};
+var documents = {};
 
 io.on("connection", socket => {
     console.log('connection');
-    let previousId;
-    const safeJoin = currentId => {
+    var previousId;
+    var safeJoin = currentId => {
         console.log('connection');
       socket.leave(previousId);
       socket.join(currentId);
@@ -38,5 +38,5 @@ io.on("connection", socket => {
     io.emit("documents", Object.keys(documents));
   });
 
-  console.log('started @4444');
-  http.listen(4444);
+  console.log('started @' + process.env.port);
+  http.listen(process.env.port);
