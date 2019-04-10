@@ -2,15 +2,14 @@
   "name": "sio-server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": ".\src\app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@types/socket.io": "^2.1.2",
-    "express": "^4.16.4",
-    "socket.io": "^2.2.0"
+    "express": "2.5.5",
+    "socket.io": "2.2.0"
   }
 }
